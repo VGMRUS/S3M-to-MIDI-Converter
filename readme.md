@@ -39,26 +39,31 @@ pip install mido libxmplite pygame tkinterdnd2
 
 How to Use
 
-    Launch the App: Run the script using python main.py.
+    Launch the App: Open "s3mToMid GUI v1.0 .py" or run the script using python "s3mToMid GUI v1.0 .py" or 
 
     Import: Drag an .s3m file onto the main window.
 
-    Configure: * Use the Play button to hear a sample.
+    Configure: * Use the Play button to hear a sample, change sample speed % to hear it a different pitch.
 
         Select if the sample is an Instrument or a Drum.
 
-        Assign the desired GM Sound and adjust the Octave if necessary.
+        Assign the desired General Midi Sound and adjust the Octave if necessary.
 
     Preview/Export:
 
-        Click PREVIEW to generate a temporary MIDI and open it immediately.
+        Click PREVIEW to generate a temporary MIDI and open it immediately, combine this with solo and mute functions to properly detect right octave and instrument.
 
-        Click SAVE CONFIG to store your instrument choices.
+        Click SAVE CONFIG to store your instrument/drum/octave/solo/mute choices in .config file next to where your .s3m file is located.
 
         Click EXPORT FINAL to save the finished .mid file in your source folder.
 
 Technical Details
 
-This converter maps S3M channels to MIDI channels dynamically. It uses RPN 0 (Pitch Bend Sensitivity) to set MIDI channels to a 24-semitone range. This allows the converter to translate the S3M "Period" values into precise MIDI Pitch Wheel movements:
+This converter maps S3M channels to MIDI channels dynamically. It uses RPN 0 (Pitch Bend Sensitivity) to set MIDI channels to a 24-semitone range. This allows the converter to translate the S3M "Period" values into precise MIDI Pitch Wheel movements
 
-semitones=log2​(CurrentPeriodRefPeriod​)×12
+All instruments have 127 velocity and 127 CC7 Volume, the volume conversion is controlled by the use of CC11 Expression
+
+For drums it's different, they get Velocity conversion instead of CC11 since the CC11 approach doesn't work if you have several drums at once
+
+This converter was specifically designed to convert .S3M Krawall GBA files (specifically the Sims Bustin' Out, URBZ and Sims 2 gba games) exported with https://github.com/MCJack123/UnkrawerterGBA , but it should work with any standard .S3M from what I've tested
+
