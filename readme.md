@@ -39,7 +39,7 @@ pip install mido libxmplite pygame tkinterdnd2
 
 How to Use
 
-    Launch the App: Open "s3mToMid GUI v1.0 .py" or run the script using python "s3mToMid GUI v1.0 .py" or 
+    Launch the App: Open "s3mToMid GUI v1.0 .py" or run the script using python "s3mToMid GUI v1.0 .py"
 
     Import: Drag an .s3m file onto the main window.
 
@@ -66,4 +66,5 @@ All instruments have 127 velocity and 127 CC7 Volume, the volume conversion is c
 For drums it's different, they get Velocity conversion instead of CC11 since the CC11 approach doesn't work if you have several drums at once
 
 This converter was specifically designed to convert .S3M Krawall GBA files (specifically the Sims Bustin' Out, URBZ and Sims 2 gba games) exported with https://github.com/MCJack123/UnkrawerterGBA , but it should work with any standard .S3M from what I've tested
+
 
