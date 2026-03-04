@@ -1,0 +1,4 @@
+mido
+libxmplite
+pygame
+tkinterdnd2
