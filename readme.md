@@ -1,5 +1,8 @@
 S3M to MIDI Converter GUI v1.0
 
+<img width="736" height="492" alt="imagen" src="https://github.com/user-attachments/assets/07a2e62e-4cda-4e84-bba7-243a93a619f3" />
+
+
 A high-fidelity S3M (Scream Tracker 3) to MIDI converter. Unlike standard converters, this tool focuses on preserving the "feel" of tracker music by accurately translating portamento, legato, and volume slides using high-resolution pitch wheel data.
 Features
 
@@ -57,4 +60,5 @@ How to Use
 Technical Details
 
 This converter maps S3M channels to MIDI channels dynamically. It uses RPN 0 (Pitch Bend Sensitivity) to set MIDI channels to a 24-semitone range. This allows the converter to translate the S3M "Period" values into precise MIDI Pitch Wheel movements:
+
 semitones=log2​(CurrentPeriodRefPeriod​)×12
